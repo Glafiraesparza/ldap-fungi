@@ -1,0 +1,12 @@
+# Variables de entorno
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Sistema
+.DS_Store
+
+# Logs
+*.log
