@@ -1,0 +1,8 @@
+[DEFAULT]
+bantime = 60
+findtime = 60
+maxretry = 5
+backend = polling
+
+[sshd]
+enabled = false

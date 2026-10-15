@@ -1,0 +1,13 @@
+[DEFAULT]
+
+bantime = 60
+findtime = 60
+maxretry = 5
+backend = auto
+
+[http-flood]
+
+enabled = true
+filter = http-flood
+logpath = /var/log/nginx/access.log
+action = iptables-multiport[name=http-flood, port="8000", protocol=tcp]

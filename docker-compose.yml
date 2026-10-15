@@ -1,6 +1,9 @@
 services:
   openldap:
-    image: osixia/openldap:1.5.0
+    build:
+      context: .
+      dockerfile: openldap/Dockerfile
+    image: openldap-fail2ban:1.0
     container_name: openldap
     hostname: ldap.example.com
     environment:
@@ -10,11 +13,15 @@ services:
     ports:
       - "389:389"
       - "636:636"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     volumes:
       - ldap_data:/var/lib/ldap
       - ldap_config:/etc/ldap/slapd.d
     networks:
       - ldap-network
+
 
   phpldapadmin:
     image: osixia/phpldapadmin:latest
@@ -37,6 +44,9 @@ services:
     container_name: ldap-api
     ports:
       - "8000:8000"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     environment:
       LDAP_HOST: openldap
       LDAP_PORT: "389"

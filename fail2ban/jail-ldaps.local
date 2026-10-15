@@ -1,0 +1,9 @@
+[ldaps-auth]
+enabled = true
+filter = ldaps
+logpath = /var/log/ldap-fail2ban.log
+backend = polling
+maxretry = 5
+findtime = 60
+bantime = 60
+action = iptables-multiport[name=ldaps-auth, port="636", protocol=tcp]
