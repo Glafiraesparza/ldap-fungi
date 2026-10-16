@@ -1,0 +1,24 @@
+ANÁLISIS DE SEGURIDAD CON NUCLEI
+Proyecto: Fungi Atlas
+Servicio: API LDAP (FastAPI)
+Herramienta: Nuclei v3.11.1
+Objetivo: http://ldap-api:8000/
+
+RESULTADOS
+Plantillas cargadas: 11181
+Severidades: todas las disponibles
+Duración aproximada: 2 minutos
+Hallazgos detectados: 13
+Severidad: informativa (info)
+
+OBSERVACIONES
+Se identificaron encabezados HTTP de seguridad faltantes.
+Se detectó Nginx 1.26.3, señalado como versión EOL.
+Se registraron intentos de conexión a los puertos 4040 y 5814,
+que estaban cerrados.
+
+CONCLUSIÓN
+Se identificaron 13 hallazgos informativos.
+No se reportaron hallazgos de severidad baja, media, alta o crítica.
+Los resultados requieren revisión para determinar las correcciones.
+El análisis se limitó a la API HTTP de FastAPI.
